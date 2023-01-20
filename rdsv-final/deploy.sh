@@ -56,8 +56,5 @@ ACCPOD2=$(echo $A2 | cut -d ' ' -f6)
 CPEPOD2=$(echo $B2 | cut -d ' ' -f6)
 
 
-cd shared
-cd rdsv-final
-
 ./osm_renes1.sh
 ./osm_renes2.sh
