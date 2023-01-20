@@ -8,7 +8,6 @@ sudo apt-get update
 
 apt-get -f install sysv-rc-conf
 
-cd 
 
 cd /etc/default/
 
