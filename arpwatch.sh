@@ -19,7 +19,7 @@ sysv-rc-conf --level 35 arpwatch on
 
 ping -c 5 10.100.1.254
 
-ping -c 5 10.255.0.2
+ping -c 5 10.100.3.1
 
 /etc/init.d/arpwatch stop
 
