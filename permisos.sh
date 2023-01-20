@@ -2,7 +2,6 @@ chmod 777 cpechart-0.1.0.tgz
 chmod 777 deploy.sh
 chmod 777 helm
 chmod 777 img
-chmod 777 index-yaml
 chmod 777 index.yaml
 chmod 777 osm_renes1.sh 
 chmod 777 osm_renes2.sh 
