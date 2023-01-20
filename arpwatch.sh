@@ -4,7 +4,7 @@ apt-get install arpwatch
 cd etc/apt
 echo 'deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse/' >> sources.list
 
-sudo apt-get update
+apt-get update
 
 apt-get -f install sysv-rc-conf
 
