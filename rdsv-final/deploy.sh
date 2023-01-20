@@ -49,8 +49,8 @@ watch osm ns-list
 kubectl -n $OSMNS get pods
 
 VI2=$(kubectl -n $OSMNS get pods)
-B2=$(grep helmchartrepo-cpechart <<< "$VI")
-A2=$(grep helmchartrepo-accesschart <<< "$VI")
+B2=$(grep helmchartrepo-cpechart <<< "$VI2")
+A2=$(grep helmchartrepo-accesschart <<< "$VI2")
 
 ACCPOD2=$(echo $A2 | cut -d ' ' -f6)
 CPEPOD2=$(echo $B2 | cut -d ' ' -f6)
