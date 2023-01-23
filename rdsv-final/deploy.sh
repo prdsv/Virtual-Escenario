@@ -54,7 +54,7 @@ A2=$(grep helmchartrepo-accesschart <<< "$VI2")
 
 ACCPOD2=$(echo $A2 | cut -d ' ' -f6)
 CPEPOD2=$(echo $B2 | cut -d ' ' -f6)
-
+cd
 cd practica/rdsv-final
 
 ./osm_renes1.sh
