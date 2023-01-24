@@ -30,6 +30,8 @@ echo $NSID1
 watch osm ns-list
 osm ns-delete $NSID1
 
+sleep 10
+
 export NSID1=$(osm ns-create --ns_name renes1 --nsd_name renes --vim_account dummy_vim)
 echo $NSID1
 watch osm ns-list
@@ -42,6 +44,7 @@ A=$(grep helmchartrepo-accesschart <<< "$VI")
 ACCPOD=$(echo $A | cut -d ' ' -f1)
 CPEPOD=$(echo $B | cut -d ' ' -f1)
 
+sleep 10
 
 export NSID2=$(osm ns-create --ns_name renes2 --nsd_name renes --vim_account dummy_vim)
 echo $NSID2
@@ -54,6 +57,9 @@ A2=$(grep helmchartrepo-accesschart <<< "$VI2")
 
 ACCPOD2=$(echo $A2 | cut -d ' ' -f6)
 CPEPOD2=$(echo $B2 | cut -d ' ' -f6)
+
+sleep 5
+
 cd
 cd practica/rdsv-final
 
