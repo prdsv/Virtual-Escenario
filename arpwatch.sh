@@ -17,10 +17,4 @@ sysv-rc-conf --level 35 arpwatch on
 
 /etc/init.d/arpwatch start
 
-ping -c 5 10.100.1.254
-
-ping -c 5 10.100.3.1
-
-/etc/init.d/arpwatch stop
-
 cd /var/lib/arpwatch
