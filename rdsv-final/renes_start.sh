@@ -65,6 +65,7 @@ $ACC_EXEC ifconfig net1 $VNFTUNIP/24
 $ACC_EXEC ovs-vsctl add-port brint vxlanacc -- set interface vxlanacc type=vxlan options:remote_ip=$HOMETUNIP
 $ACC_EXEC ovs-vsctl add-port brint vxlanint -- set interface vxlanint type=vxlan options:remote_ip=$IPCPE options:key=inet options:dst_port=8742
 $ACC_EXEC ip route add $IPCPE/32 via $K8SGW
+$ACC_EXEC ryu-manager ryu.app.rest_qos ryu.app.qos_rest_router ryu.app.rest_conf_switch qos_simple-switch_13.py &
 
 ## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas
 echo "## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas"
