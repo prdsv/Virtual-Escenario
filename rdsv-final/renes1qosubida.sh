@@ -20,4 +20,3 @@ sleep 10
 
 $ACC_EXEC curl -X POST -d '{"match": {"nw_src": "'$H12'"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000001
 $ACC_EXEC curl -X POST -d '{"match": {"nw_src": "'$H11'"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000001
-
