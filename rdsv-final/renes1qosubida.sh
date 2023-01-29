@@ -1,22 +1,12 @@
 set -u # to verify variables are defined
 : $KUBECTL
 : $OSMNS
-: $VACC
-: $VCPE
 : $H11
 : $H22
 
-if [[ ! $VACC =~ "helmchartrepo-accesschart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <access_deployment_id>: $VACC"
-    exit 1
-fi
+export VACC="deploy/$A"
+export VCPE="deploy/$B"
 
-if [[ ! $VCPE =~ "helmchartrepo-cpechart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <cpe_deployment_id>: $VCPE"
-    exit 1
-fi
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $OSMNS $VCPE --"
