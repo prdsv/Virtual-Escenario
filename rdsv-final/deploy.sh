@@ -62,5 +62,5 @@ sleep 5
 cd
 cd practica/rdsv-final
 
-. ./osm_renes1.sh
-. ./osm_renes2.sh
+#. ./osm_renes1.sh
+#. ./osm_renes2.sh
