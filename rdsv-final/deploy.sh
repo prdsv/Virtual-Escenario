@@ -14,9 +14,6 @@ echo $OSMNS
 
 osm repo-add helmchartrepo https://prdsv.github.io/repo-rdsv --type helm-chart --description "Repo para la practica de OSM" 
 
-#osm repo-add helmchartrepo https://patriciaOrtuno28.github.io/repo-rdsv --type helm-chart --description "Repo para la practica de OSM" 
-
-#osm ns-create --ns_name helmchartrepo --nsd_name k8s_juju --vim_account <VIM_ACCOUNT> --config_file config.yaml --ssh_keys ${HOME}/.ssh/id_rsa.pub
 
 cd pck
 osm nfpkg-create accessknf_vnfd.tar.gz
