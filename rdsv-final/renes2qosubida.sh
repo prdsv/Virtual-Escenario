@@ -6,8 +6,8 @@ set -u # to verify variables are defined
 
 
 
-export VACC1="deploy/$A2"
-export VCPE1="deploy/$B2"
+export VACC1="deploy/$ACCPOD2"
+export VCPE1="deploy/$CPEPOD2"
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC1 --"
 CPE_EXEC="$KUBECTL exec -n $OSMNS $VCPE1 --"
