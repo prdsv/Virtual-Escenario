@@ -1,11 +1,8 @@
-   
-set -u # to verify variables are defined
+ set -u # to verify variables are defined
 : $KUBECTL
 : $OSMNS
 : $H11
 : $H12
-: $H21
-: $H22
 
 export VACC="deploy/$OSMACC"
 export VCPE="deploy/$OSMCPE"
@@ -23,6 +20,3 @@ $ACC_EXEC curl -X POST -d '{"port_name": "vxlanacc", "type": "linux-htb", "max_r
 sleep 10
 $ACC_EXEC curl -X POST -d '{"match": {"nw_dst": "'$H12'"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000001
 $ACC_EXEC curl -X POST -d '{"match": {"nw_dst": "'$H11'"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000001
-
-
-
