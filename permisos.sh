@@ -5,6 +5,7 @@ chmod 777 destroyk8.sh
 
 cd rdsv-final
 
+chmod 777 accesschart-0.1.0.tgz 
 chmod 777 cpechart-0.1.0.tgz 
 chmod 777 deploy.sh
 chmod 777 helm
@@ -16,3 +17,6 @@ chmod 777 osm_renes_start.sh
 chmod 777 pck
 chmod 777 renes_start.sh
 chmod 777 vnx
+chmod 777 renes1qosbajada.sh
+chmod 777 renes1qosubida.sh
+chmod 777 renes2qosubida.sh
