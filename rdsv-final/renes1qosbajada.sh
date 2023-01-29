@@ -2,42 +2,23 @@
 set -u # to verify variables are defined
 : $KUBECTL
 : $OSMNS
-: $VACC
-: $VCPE
 : $H11
 : $H12
 : $H21
 : $H22
 
-if [[ ! $VACC =~ "helmchartrepo-accesschart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <access_deployment_id>: $VACC"
-    exit 1
-fi
+export VACC="deploy/$A"
+export VCPE="deploy/$B"
 
-if [[ ! $VCPE =~ "helmchartrepo-cpechart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <cpe_deployment_id>: $VCPE"
-    exit 1
-fi
+export VACC1="deploy/$A2"
+export VCPE1="deploy/$B2"
 
-if [[ ! $A2 =~ "helmchartrepo-accesschart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <access_deployment_id>: $A2"
-    exit 1
-fi
-
-if [[ ! $B2 =~ "helmchartrepo-cpechart"  ]]; then
-    echo ""       
-    echo "ERROR: incorrect <cpe_deployment_id>: $B2"
-    exit 1
-fi
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $OSMNS $VCPE --"
 
-ACC_EXEC2="$KUBECTL exec -n $OSMNS $A2 --"
-CPE_EXEC2="$KUBECTL exec -n $OSMNS $B2 --"
+ACC_EXEC2="$KUBECTL exec -n $OSMNS $VACC1 --"
+CPE_EXEC2="$KUBECTL exec -n $OSMNS $VCPE1 --"
 
 $ACC_EXEC curl -X PUT -d '"tcp:127.0.0.1:6632"' http://localhost:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
 
