@@ -4,8 +4,8 @@ set -u # to verify variables are defined
 : $H11
 : $H22
 
-export VACC="deploy/$ACCPOD"
-export VCPE="deploy/$CPEPOD"
+export VACC="deploy/$OSMACC"
+export VCPE="deploy/$OSMCPE"
 
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
