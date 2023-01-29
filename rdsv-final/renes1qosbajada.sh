@@ -7,18 +7,13 @@ set -u # to verify variables are defined
 : $H21
 : $H22
 
-export VACC="deploy/$ACCPOD"
-export VCPE="deploy/$CPEPOD"
-
-export VACC1="deploy/$ACCPOD2"
-export VCPE1="deploy/$CPEPOD2"
+export VACC="deploy/$OSMACC"
+export VCPE="deploy/$OSMCPE"
 
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $OSMNS $VCPE --"
 
-ACC_EXEC2="$KUBECTL exec -n $OSMNS $VACC1 --"
-CPE_EXEC2="$KUBECTL exec -n $OSMNS $VCPE1 --"
 
 $ACC_EXEC curl -X PUT -d '"tcp:127.0.0.1:6632"' http://localhost:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
 
@@ -30,5 +25,4 @@ $ACC_EXEC curl -X POST -d '{"match": {"nw_dst": "'$H12'"}, "actions":{"queue": "
 $ACC_EXEC curl -X POST -d '{"match": {"nw_dst": "'$H11'"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000001
 
 
-$ACC_EXEC2 curl -X POST -d '{"match": {"nw_dst": "'$H22'"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000001
-$ACC_EXEC2 curl -X POST -d '{"match": {"nw_dst": "'$H21'"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000001
+
