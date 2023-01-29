@@ -32,4 +32,4 @@ echo $OSMCPE
 export VACC="deploy/$OSMACC"
 export VCPE="deploy/$OSMCPE"
 
-./renes_start.sh
+. ./renes_start.sh
