@@ -7,11 +7,11 @@ set -u # to verify variables are defined
 : $H21
 : $H22
 
-export VACC="deploy/$A"
-export VCPE="deploy/$B"
+export VACC="deploy/$ACCPOD"
+export VCPE="deploy/$CPEPOD"
 
-export VACC1="deploy/$A2"
-export VCPE1="deploy/$B2"
+export VACC1="deploy/$ACCPOD2"
+export VCPE1="deploy/$CPEPOD2"
 
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
