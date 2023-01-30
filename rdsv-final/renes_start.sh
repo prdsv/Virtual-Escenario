@@ -64,10 +64,18 @@ $ACC_EXEC ovs-vsctl set bridge brint other-config:datapath-id=0000000000000001
 $ACC_EXEC ovs-vsctl set-controller brint tcp:127.0.0.1:6633
 $ACC_EXEC ovs-vsctl set-manager ptcp:6632
 $ACC_EXEC ifconfig net1 $VNFTUNIP/24
-$ACC_EXEC ovs-vsctl add-port brint vxlanacc -- set interface vxlanacc type=vxlan options:remote_ip=$HOMETUNIP
-$ACC_EXEC ovs-vsctl add-port brint vxlanint -- set interface vxlanint type=vxlan options:remote_ip=$IPCPE options:key=inet options:dst_port=8742
+
+$ACC_EXEC ip link add vxlanacc type vxlan id 0 remote $HOMETUNIP dstport 4789 dev net1
+# En la siguiente línea se ha corregido el dispositivo, que debe ser eth0
+$ACC_EXEC ip link add vxlanint type vxlan id 1 remote $IPCPE dstport 8742 dev eth0
+$ACC_EXEC ovs-vsctl add-port brint vxlanacc
+$ACC_EXEC ovs-vsctl add-port brint vxlanint
+$ACC_EXEC ifconfig vxlanacc up
+$ACC_EXEC ifconfig vxlanint up
+
 $ACC_EXEC ip route add $IPCPE/32 via $K8SGW
 $ACC_EXEC ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_switch_13.py &
+
 
 ## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas
 echo "## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas"
