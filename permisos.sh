@@ -19,7 +19,7 @@ chmod 777 renes_start.sh
 chmod 777 vnx
 chmod 777 renes1qosdown.sh
 chmod 777 renes1qosup.sh
-chmod 777 renes1qosdown.sh
+chmod 777 renes2qosdown.sh
 chmod 777 renes2qosup.sh
 
 
