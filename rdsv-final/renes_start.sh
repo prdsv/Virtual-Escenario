@@ -73,7 +73,7 @@ $ACC_EXEC ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_swi
 echo "## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas"
 $CPE_EXEC ovs-vsctl add-br brint
 $CPE_EXEC ifconfig brint $VCPEPRIVIP/24
-$CPE_EXEC ovs-vsctl add-port brint vxlanint -- set interface vxlanint type=vxlan options:remote_ip=$IPACCESS options:key=inet options:dst_port=8742
+$CPE_EXEC ovs-vsctl add-port brint vxlanint -- set interface vxlanint type=vxlan options:remote_ip=$IPACCESS options:key=1 options:dst_port=8742
 $CPE_EXEC ifconfig brint mtu 1400
 $CPE_EXEC ifconfig net1 $VCPEPUBIP/24
 $CPE_EXEC ip route add $IPACCESS/32 via $K8SGW
