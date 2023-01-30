@@ -1,8 +1,3 @@
-set -u # to verify variables are defined
-: $KUBECTL
-: $OSMNS
-: $H11
-: $H12
 
 export VACC="deploy/$OSMACC"
 export VCPE="deploy/$OSMCPE"
