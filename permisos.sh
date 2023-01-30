@@ -17,6 +17,9 @@ chmod 777 osm_renes_start.sh
 chmod 777 pck
 chmod 777 renes_start.sh
 chmod 777 vnx
-chmod 777 renes1qosbajada.sh
-chmod 777 renes1qosubida.sh
-chmod 777 renes2qosubida.sh
+chmod 777 renes1qosdown.sh
+chmod 777 renes1qoup.sh
+chmod 777 renes1qosdown.sh
+chmod 777 renes2qoup.sh
+
+
