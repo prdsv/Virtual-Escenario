@@ -62,9 +62,6 @@ cd rdsv-final
 Para dar conectividad a la red residencial 1 y poder acceder a sus Ips se realiza.
 
 ```console
-cd rdsv-final
-```
-```console
 . ./osm_renes1.sh
 ```
 Para mostrar las ips de los host se realiza:
