@@ -63,8 +63,9 @@ Para dar conectividad a la red residencial 1 y poder acceder a sus Ips se realiz
 
 ```console
 cd rdsv-final
-
+```
 . ./osm_renes1.sh
+
 Para mostrar las ips de los host se realiza:
 ```console
 ifconfig eth1
@@ -74,11 +75,13 @@ Si fallará el comando se hace:
 dhclient eth1
 ifconfig
 ```
+
+
 Para comprobar que existe conexión a Internet se realiza:
 ```console
 ping 8.8.8.8
 ```
-```
+<sub> Se realiza el mismo proceso para la red residencial segunda pero ejecutando . ./osm_renes2.sh</sub>
 ### Ryu: controlar la calidad de servicio
 ## Configuración de la primera red residencial:
 Para que la primera red residencial cumpla las condiciones de QoS que son: un límite de 12Mbps de bajada y 6Mbps de subida. Y para los host en el caso de h11 8Mbps de bajada y 4Mbps mínimos de subida y de h12 4Mbps máximos de bajada y 2Mbps máximos de subida, se ejecuta para configurar las condicones de bajada:
@@ -97,13 +100,12 @@ iperf3 -s -i 1 -p 5002
 Para mandar tráfico primero se accede a KNF:cpe y se realiza:
 ```console
 kubectl -n $OSMNS exec -it $CPEPOD -- /bin/bash
-
 iperf3 -c 192.168.255.2x -p 5002 -u -b 20M 1200
 ```
+
 Para probar que se ha hecho bien la configuración de subida primero se accede a KNF:cpe y se realiza:
 ```console
 kubectl -n $OSMNS exec -it $CPEPOD -- /bin/bash
-
 iperf3 -s -i 1 -p 5002
 ```
 En los hosts se realiza:
@@ -140,7 +142,7 @@ Y para las condiciones de subida:
 Se instala iperf en todos los host mediante:
 ```console
 . ./iperf.sh
-``
+```
 Para probar que se ha hecho bien la configuración de bajada en los host se ejecuta:
 ```console
 iperf3 -s -i 1 -p 5002
