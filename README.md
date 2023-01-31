@@ -73,7 +73,7 @@ ifconfig eth1
 ```
 Si fallará el comando se hace:
 ```console
-dhclient eth1
+sudo dhclient eth1
 ifconfig
 ```
 
@@ -124,7 +124,7 @@ ifconfig eth1
 ```
 Si fallará el comando se hace:
 ```console
-dhclient eth1
+sudo dhclient eth1
 ifconfig
 ```
 Para comprobar que existe conexión a Internet se realiza:
