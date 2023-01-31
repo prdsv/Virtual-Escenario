@@ -85,6 +85,7 @@ $ACC_EXEC ip route add $IPCPE/32 via $K8SGW
 
 ## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas
 echo "## 4. En VNF:cpe agregar un bridge y configurar IPs y rutas"
+$CPE_EXEC ovs-vsctl del-br brint
 $CPE_EXEC ovs-vsctl add-br brint
 $CPE_EXEC ifconfig brint $VCPEPRIVIP/24
 $CPE_EXEC ovs-vsctl add-port brint vxlanint -- set interface vxlanint type=vxlan options:remote_ip=$IPACCESS options:key=1 options:dst_port=8742
