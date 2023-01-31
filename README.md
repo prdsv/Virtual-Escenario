@@ -141,6 +141,8 @@ Y para las condiciones de subida:
 ```
 Se instala iperf en todos los host mediante:
 ```console
+chmod 777 iperf.sh
+
 . ./iperf.sh
 ```
 Para probar que se ha hecho bien la configuración de bajada en los host se ejecuta:
