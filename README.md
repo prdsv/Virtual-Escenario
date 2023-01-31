@@ -59,12 +59,25 @@ cd rdsv-final
 . ./deploy.sh
 ```
 
-Para dar conectividad a la renes1 y poder acceder a sus Ips se realiza.
+Para dar conectividad a la red residencial 1 y poder acceder a sus Ips se realiza.
 
 ```console
 cd rdsv-final
 
 . ./osm_renes1.sh
+Para mostrar las ips de los host se realiza:
+```console
+ifconfig eth1
+```
+Si fallará el comando se hace:
+```console
+dhclient eth1
+ifconfig
+```
+Para comprobar que existe conexión a Internet se realiza:
+```console
+ping 8.8.8.8
+```
 ```
 ### Ryu: controlar la calidad de servicio
 ## Configuración de la primera red residencial:
@@ -97,7 +110,24 @@ En los hosts se realiza:
 ```console
 iperf3 -c 192.168.255.1 -p 5002 -u -b 20M 1200
 ```
-## Configuración de la primera red residencial:
+## Configuración de la segunda red residencial:
+Para dar conectividad a la red residencial 2 y poder acceder a sus Ips se realiza:
+```console
+. ./osm_renes2.sh
+```
+Para mostrar las ips de los host se realiza:
+```console
+ifconfig eth1
+```
+Si fallará el comando se hace:
+```console
+dhclient eth1
+ifconfig
+```
+Para comprobar que existe conexión a Internet se realiza:
+```console
+ping 8.8.8.8
+```
 Por otro lado, para que la segunda red residencial cumpla las condiciones de QoS que son: un límite de 12Mbps de bajada y 6Mbps de subida. Y para los host en el caso de h11 8Mbps de bajada y 4Mbps mínimos de subida y de h12 4Mbps máximos de bajada y 2Mbps máximos de subida, se ejecuta para configurar las condicones de bajada:
 
 ```console
@@ -107,6 +137,10 @@ Y para las condiciones de subida:
 ```console
 . ./renes2qosup.sh
 ```
+Se instala iperf en todos los host mediante:
+```console
+. ./iperf.sh
+``
 Para probar que se ha hecho bien la configuración de bajada en los host se ejecuta:
 ```console
 iperf3 -s -i 1 -p 5002
