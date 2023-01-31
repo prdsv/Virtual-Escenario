@@ -64,8 +64,9 @@ Para dar conectividad a la red residencial 1 y poder acceder a sus Ips se realiz
 ```console
 cd rdsv-final
 ```
+```console
 . ./osm_renes1.sh
-
+```
 Para mostrar las ips de los host se realiza:
 ```console
 ifconfig eth1
@@ -82,7 +83,7 @@ Para comprobar que existe conexión a Internet se realiza:
 ping 8.8.8.8
 ```
 <sub> Se realiza el mismo proceso para la red residencial segunda pero ejecutando . ./osm_renes2.sh</sub>
-### Ryu: controlar la calidad de servicio
+# Ryu: controlar la calidad de servicio
 ## Configuración de la primera red residencial:
 Para que la primera red residencial cumpla las condiciones de QoS que son: un límite de 12Mbps de bajada y 6Mbps de subida. Y para los host en el caso de h11 8Mbps de bajada y 4Mbps mínimos de subida y de h12 4Mbps máximos de bajada y 2Mbps máximos de subida, se ejecuta para configurar las condicones de bajada:
 
