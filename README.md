@@ -31,7 +31,7 @@ En pc-osm se ejecuta.
 /lab/rdsv/get-osmlab2 RDSV-OSM l059
 ```
 <sub> En ambos casos lxx será el identificador de cada ordenador.</sub>
-
+<sub> Se ejecutarán la mayoría de instrucciones en RDSV-OSM menos cuando se especifíca en los host de RDSV-K8 o se especifique la maquina RDSV-K8</sub>
 ### Despliegue del nuevo escenario 
 Para comenzar a desplegar los escenarios se debe clonar el repositorio en ambas máquinas:
 ```console
@@ -139,7 +139,7 @@ Y para las condiciones de subida:
 ```console
 . ./renes2qosup.sh
 ```
-Se instala iperf en todos los host mediante:
+En la máquina RDSV-K8S se instala iperf en todos los host mediante:
 ```console
 chmod 777 iperf.sh
 
